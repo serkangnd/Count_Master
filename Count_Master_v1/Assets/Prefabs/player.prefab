@@ -458,6 +458,7 @@ MonoBehaviour:
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 64
+  explodeParticle: {fileID: 8347077336693301126, guid: 942c92b7b181f4c46b90bd91a088e3cb, type: 3}
 --- !u!23 &-86895897179074639
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -611,7 +612,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2310514774154243031, guid: 0b06e391ca1507f459a75324a9460614, type: 3}
+  - {fileID: 2100000, guid: 0979207bba2e1cb4caf5db7dbf9122dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

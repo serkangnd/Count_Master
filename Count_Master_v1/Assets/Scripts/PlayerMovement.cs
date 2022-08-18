@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header(" Components ")]
+    [SerializeField] private float movementSpeed;
+    [SerializeField] private float controlSpeed;
+    [SerializeField] bool isTouching = false;
+    [SerializeField] float touchPosX;
+    [SerializeField] private bool gameState = false;
 
-    public float movementSpeed;
-    public float controlSpeed;
-    bool isTouching = false;
-    float touchPosX;
 
     void Update()
     {
@@ -19,10 +21,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        //Get animation
-        transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
+        if (gameState == true)
+        {
+            //Get animation
+            transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
+        }
 
-        if (isTouching)
+        if (isTouching && gameState == true)
         {
            // We are taking our touch position to a variable and add to multiplied with control speed
            touchPosX += Input.GetAxis("Mouse X") * controlSpeed * Time.fixedDeltaTime;
@@ -38,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             isTouching = true;
+            gameState = true;
         }
         else
         {

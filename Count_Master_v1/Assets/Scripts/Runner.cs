@@ -20,6 +20,7 @@ public class Runner : MonoBehaviour
 
     [Header(" Detection ")]
     [SerializeField] private LayerMask obstaclesLayer;
+    [SerializeField] private GameObject explodeParticle;
 
 
 
@@ -64,9 +65,13 @@ public class Runner : MonoBehaviour
         collider.enabled = false;
         renderer.enabled = false;
 
-        if (transform.parent != null && transform.parent.childCount <= 1)
+        Instantiate(explodeParticle, transform.position, Quaternion.identity);
 
+        if (transform.parent != null && transform.parent.childCount <= 1)
+        {
+            //Change here with canvas death
             SceneManager.LoadScene("RookieUI");
+        }
 
         transform.parent = null;
         Destroy(gameObject);
