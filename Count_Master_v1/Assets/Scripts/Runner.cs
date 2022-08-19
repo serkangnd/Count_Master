@@ -14,16 +14,15 @@ public class Runner : MonoBehaviour
     [SerializeField] private Renderer renderer;
     public static int currentIndex;
 
+    PlayerMovement playerState;
+
     //[SerializeField] public Canvas gameOverCanvas; 
     private bool targeted;
-
 
     [Header(" Detection ")]
     [SerializeField] private LayerMask obstaclesLayer;
     [SerializeField] private GameObject explodeParticle;
-
-
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -71,16 +70,10 @@ public class Runner : MonoBehaviour
         {
             //Change here with canvas death
             SceneManager.LoadScene("RookieUI");
+            
         }
 
         transform.parent = null;
         Destroy(gameObject);
-
-
-
     }
-
-
-
-
 }
