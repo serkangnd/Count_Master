@@ -21,6 +21,7 @@ public class Runner : MonoBehaviour
 
     [Header(" Detection ")]
     [SerializeField] private LayerMask obstaclesLayer;
+    [SerializeField] private LayerMask finishLayer;
     [SerializeField] private GameObject explodeParticle;
     
 
@@ -37,6 +38,7 @@ public class Runner : MonoBehaviour
             return;
 
         DetectObstacles();
+        DetectFinish();
     }
 
 
@@ -46,6 +48,14 @@ public class Runner : MonoBehaviour
         if (Physics.OverlapSphere(transform.position, 0.1f, obstaclesLayer).Length > 0)
             Explode();
 
+    }
+
+    private void DetectFinish()
+    {
+        if (Physics.OverlapSphere(transform.position, 0.1f, finishLayer).Length > 0)
+        {
+            GameManager.instance.UpdateGameState(GameManager.GameState.Win);
+        }
     }
 
     public void SetAsTarget()
@@ -70,7 +80,7 @@ public class Runner : MonoBehaviour
         {
             //Change here with canvas death
             SceneManager.LoadScene("RookieUI");
-            
+            GameManager.instance.UpdateGameState(GameManager.GameState.Lost);
         }
 
         transform.parent = null;

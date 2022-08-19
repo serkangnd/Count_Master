@@ -16,8 +16,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         gameState = GameManager.instance.state;
-
-        GetInput();
+        if(gameState == GameManager.GameState.Playing || gameState == GameManager.GameState.MainMenu)
+        {
+            GetInput();
+        }
         Move();
     }
 
