@@ -46,15 +46,20 @@ public class Runner : MonoBehaviour
     private void DetectObstacles()
     {
         if (Physics.OverlapSphere(transform.position, 0.1f, obstaclesLayer).Length > 0)
+        {
             Explode();
+        }
+            
+       
 
     }
 
     private void DetectFinish()
     {
-        if (Physics.OverlapSphere(transform.position, 0.1f, finishLayer).Length > 0)
+        if (Physics.OverlapSphere(transform.position, 0.0f, finishLayer).Length > 0)
         {
-            GameManager.instance.UpdateGameState(GameManager.GameState.Win);
+
+            EndGame();
         }
     }
 
@@ -70,7 +75,6 @@ public class Runner : MonoBehaviour
 
     public void Explode()
     {
-        Debug.Log("explode");
         collider.enabled = false;
         renderer.enabled = false;
 
@@ -85,5 +89,11 @@ public class Runner : MonoBehaviour
 
         transform.parent = null;
         Destroy(gameObject);
+    }
+
+    public void EndGame()
+    {
+
+        GameManager.instance.UpdateGameState(GameManager.GameState.Win);
     }
 }
