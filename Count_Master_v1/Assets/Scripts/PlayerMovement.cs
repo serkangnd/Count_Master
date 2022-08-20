@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         if(gameState == GameManager.GameState.Playing || gameState == GameManager.GameState.MainMenu)
         {
             GetInput();
-            GetInputMobile();
+           // GetInputMobile();
         }
         Move();
         KeepBounds();
@@ -35,7 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (isTouching && gameState == GameManager.GameState.Playing)
         {
-            // We are taking our touch position to a variable and add to multiplied with control speed
+            //if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            //{
+            //   // We are taking our touch position to a variable and add to multiplied with control speed
+               
+            //}
             touchPosX += Input.GetAxis("Mouse X") * controlSpeed * Time.fixedDeltaTime;
         }
         // We are changing our position via new touchPosX - We don't want to any changes on y or z axis

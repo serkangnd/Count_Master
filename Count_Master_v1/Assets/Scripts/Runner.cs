@@ -18,17 +18,18 @@ public class Runner : MonoBehaviour
 
     //[SerializeField] public Canvas gameOverCanvas; 
     private bool targeted;
+    private GameObject explodeParticle;
 
     [Header(" Detection ")]
     [SerializeField] private LayerMask obstaclesLayer;
     [SerializeField] private LayerMask finishLayer;
-    [SerializeField] private GameObject explodeParticle;
     
 
     // Start is called before the first frame update
     void Start()
     {
         currentIndex = SceneManager.GetActiveScene().buildIndex;
+        explodeParticle = GameObject.FindWithTag("Explode");
     }
 
     // Update is called once per frame
@@ -49,9 +50,6 @@ public class Runner : MonoBehaviour
         {
             Explode();
         }
-            
-       
-
     }
 
     private void DetectFinish()
@@ -78,7 +76,8 @@ public class Runner : MonoBehaviour
         collider.enabled = false;
         renderer.enabled = false;
 
-        Instantiate(explodeParticle, transform.position, Quaternion.identity);
+        //Instantiate(explodeParticle, transform.position, Quaternion.identity);
+        explodeParticle.GetComponent<ParticleSystem>().Play();
 
         if (transform.parent != null && transform.parent.childCount <= 1)
         {

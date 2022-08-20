@@ -461,7 +461,6 @@ MonoBehaviour:
   finishLayer:
     serializedVersion: 2
     m_Bits: 128
-  explodeParticle: {fileID: 8347077336693301126, guid: 942c92b7b181f4c46b90bd91a088e3cb, type: 3}
 --- !u!23 &-86895897179074639
 MeshRenderer:
   m_ObjectHideFlags: 0
