@@ -83,7 +83,6 @@ public class Runner : MonoBehaviour
         if (transform.parent != null && transform.parent.childCount <= 1)
         {
             //Change here with canvas death
-            SceneManager.LoadScene("RookieUI");
             GameManager.instance.UpdateGameState(GameManager.GameState.Lost);
         }
 

@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         if(gameState == GameManager.GameState.Playing || gameState == GameManager.GameState.MainMenu)
         {
             GetInput();
+            //GetInputMobile();
         }
         Move();
     }
@@ -45,6 +46,20 @@ public class PlayerMovement : MonoBehaviour
     void GetInput()
     {
         if (Input.GetMouseButton(0))
+        {
+            isTouching = true;
+            GameManager.instance.UpdateGameState(GameManager.GameState.Playing);
+        }
+        else
+        {
+            isTouching = false;
+        }
+    }
+
+    //Mobile Inputs
+    void GetInputMobile()
+    {
+        if (Input.touchCount > 0)
         {
             isTouching = true;
             GameManager.instance.UpdateGameState(GameManager.GameState.Playing);

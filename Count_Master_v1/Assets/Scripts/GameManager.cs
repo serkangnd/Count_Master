@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,6 +63,10 @@ public class GameManager : MonoBehaviour
     private void HandleLost()
     {
         lostScreen.SetActive(true);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
     public enum GameState
 {
