@@ -27,7 +27,8 @@ public class Formation : MonoBehaviour
     void Update()
     {
         FermatSpiralPlacement();
-        
+
+        squadAmountText.text = transform.childCount.ToString();
 
     }
 

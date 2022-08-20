@@ -3,6 +3,7 @@
 -a="C:\Users\serka\Documents\GitHub\Count_Master\Count_Master_v1\Library\PlayerScriptAssemblies\Unity.Timeline.dll"
 -a="C:\Users\serka\Documents\GitHub\Count_Master\Count_Master_v1\Library\PlayerScriptAssemblies\Unity.TextMeshPro.dll"
 -a="C:\Users\serka\Documents\GitHub\Count_Master\Count_Master_v1\Library\PlayerScriptAssemblies\UnityEngine.UI.dll"
+-a="C:\Users\serka\Documents\GitHub\Count_Master\Count_Master_v1\Library\PlayerScriptAssemblies\Cinemachine.dll"
 -a="C:\Users\serka\Documents\GitHub\Count_Master\Count_Master_v1\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll"
 -a="C:\Users\serka\Documents\GitHub\Count_Master\Count_Master_v1\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Portable\Newtonsoft.Json.dll"
 -a="C:\Users\serka\Documents\GitHub\Count_Master\Count_Master_v1\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll"

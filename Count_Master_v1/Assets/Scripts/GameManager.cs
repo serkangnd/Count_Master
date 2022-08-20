@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenuScreen;
     public GameObject winScreen;
     public GameObject lostScreen;
+    public GameObject endGameVFX;
 
     public static GameManager instance;
     public GameState state;
@@ -59,6 +60,10 @@ public class GameManager : MonoBehaviour
     private void HandleWin()
     {
         winScreen.SetActive(true);
+        foreach (Transform child in endGameVFX.transform)
+        {
+            child.GetComponent<ParticleSystem>().Play();
+        }
     }
     private void HandleLost()
     {
