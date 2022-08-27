@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject winScreen;
     public GameObject lostScreen;
     public GameObject endGameVFX;
+    public int currentScore;
+    public TextMeshProUGUI scoreText;
 
     public static GameManager instance;
     public GameState state;
@@ -64,6 +68,7 @@ public class GameManager : MonoBehaviour
         {
             child.GetComponent<ParticleSystem>().Play();
         }
+        scoreText.text = "Finish Count Is: " + PlayerPrefs.GetInt("Score").ToString();
     }
     private void HandleLost()
     {

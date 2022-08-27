@@ -23,7 +23,9 @@ public class Runner : MonoBehaviour
     [Header(" Detection ")]
     [SerializeField] private LayerMask obstaclesLayer;
     [SerializeField] private LayerMask finishLayer;
-    
+
+    //PlayerPrefs
+    int currentScore;
 
     // Start is called before the first frame update
     void Start()
@@ -91,7 +93,8 @@ public class Runner : MonoBehaviour
 
     public void EndGame()
     {
-
         GameManager.instance.UpdateGameState(GameManager.GameState.Win);
+        currentScore = transform.parent.childCount;
+        PlayerPrefs.SetInt("Score", currentScore);
     }
 }

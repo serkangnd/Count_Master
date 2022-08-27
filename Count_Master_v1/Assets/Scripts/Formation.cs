@@ -17,19 +17,17 @@ public class Formation : MonoBehaviour
     [Header(" Settings ")]
     [SerializeField] private Runner runnerPrefab;
 
+
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
         FermatSpiralPlacement();
-
         squadAmountText.text = transform.childCount.ToString();
-
     }
 
     private void FermatSpiralPlacement()
